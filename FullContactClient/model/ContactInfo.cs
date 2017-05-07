@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FullContactClient.model
+namespace FullContactClientCore.model
 {
     public class ContactInfo
     {

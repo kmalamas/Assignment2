@@ -1,12 +1,12 @@
-﻿using FullContactClient.model;
+﻿using FullContactClientCore.model;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FullContactClient
+namespace FullContactClientCore
 {
-    interface IFullContactApi
+    public interface IFullContactApi
     {
         Task<FullContactPerson>LookupPersonByEmailAsync(string email);
     }
