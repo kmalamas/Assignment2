@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FullContactClient.model
 {
-    public class Person
+    public class FullContactPerson
     {
 
             public string likelihood { get; set; }
