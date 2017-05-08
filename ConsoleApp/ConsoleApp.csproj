@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FullContactClientImplementation\FullContactClient.csproj" />
+    <ProjectReference Include="..\FullContactClient\FullContactClient.csproj" />
   </ItemGroup>
 
 </Project>
