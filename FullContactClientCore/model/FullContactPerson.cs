@@ -18,7 +18,7 @@ namespace FullContactClientCore.model
             {
                 Console.WriteLine("Likelihood: " + likelihood);
                 contactInfo.print();
-                Console.WriteLine("Social Profiles: ");
+                Console.WriteLine("Social Profiles: --------------------------------------");
                 foreach (SocialProfile p in socialProfiles)
                 {
                     p.printProfile();

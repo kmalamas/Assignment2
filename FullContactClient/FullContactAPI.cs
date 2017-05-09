@@ -18,12 +18,18 @@ namespace FullContactClient
             _client.BaseAddress =new Uri("https://api.fullcontact.com");
             _client.DefaultRequestHeaders.Add("X-FullContact-APIKey", "6e05e594b715e44b");
         }
+        /// <summary>
+        /// Implementation of LookupPersonByEmailAsync method required by IFullContactApi interface.
+        /// Gets an email as input to be used as a filter in the request to the API. 
+        /// Returns a async task which will return a FullContactPerson object.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public async Task<FullContactPerson> LookupPersonByEmailAsync(string email)
         {
-            var url = "v2/person.json?email=";
+            string url = "v2/person.json?email=";
             url = url + email;
-            var JsonResponse = string.Empty;
-
+            
             var response = await _client.GetAsync(url);
             if (response.IsSuccessStatusCode)
             {
@@ -32,8 +38,14 @@ namespace FullContactClient
             }
             return null;
         }
-     
 
+        /// <summary>
+        /// parses JSON response using Newtonsoft package. 
+        /// It maps the attributes defined for FullContactPerson in the model
+        /// defined in FullContactClientCore class library and returns an FullContactPerson object
+        /// </summary>
+        /// <param name="response"></param>
+        /// <returns></returns>
         public FullContactPerson parseResponse(string response)
         {
             JsonSerializerSettings settings = new JsonSerializerSettings();
