@@ -24,7 +24,11 @@ namespace ConsoleApp
             { 
             IFullContactApi fullContactApi = new FullContactAPI();
             var person = await fullContactApi.LookupPersonByEmailAsync(email);
-            person.printInfo();
+                if (person != null)  //if api returns no data for the email
+                {
+                    person.printInfo();
+                }
+                else Console.WriteLine("No data returned for this email address. Press Any key to exit.");
             Console.ReadLine();
             }
            
