@@ -16,17 +16,19 @@ namespace FullContactClientCore.model
         public string username { get; set; }
         public string id { get; set; }
 
-        public void printProfile()
+        public override string ToString()
         {
-            Console.WriteLine(typeName + " Profile :");
-            Console.WriteLine("Username :" + username);
-            if (bio != null) { Console.WriteLine("Bio :" + bio); }
-            Console.WriteLine("Url :" + url);
-            if (id != null) { Console.WriteLine("User ID :" + id); }
-            Console.WriteLine("Type  :" + type);
-            Console.WriteLine("Type ID :" + typeId);
-            if (followers != null) { Console.WriteLine("Followers :" + followers); }
-            if (following != null) { Console.WriteLine("following :" + following); }
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(typeName + " Profile :");
+            sb.AppendLine("Username :" + username);
+            if (bio != null) { sb.AppendLine("Bio :" + bio); }
+            sb.AppendLine("Url :" + url);
+            if (id != null) { sb.AppendLine("User ID :" + id); }
+            sb.AppendLine("Type  :" + type);
+            sb.AppendLine("Type ID :" + typeId);
+            if (followers != null) { sb.AppendLine("Followers :" + followers); }
+            if (following != null) { sb.AppendLine("following :" + following); }
+            return sb.ToString();
 
         }
     }

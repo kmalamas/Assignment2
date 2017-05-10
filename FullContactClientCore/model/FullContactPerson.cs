@@ -14,16 +14,19 @@ namespace FullContactClientCore.model
 
 
 
-        public void printInfo()
-            {
-                Console.WriteLine("Likelihood: " + likelihood);
-                contactInfo.print();
-                Console.WriteLine("Social Profiles: --------------------------------------");
+             public override string ToString()
+             {
+
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("Likelihood: " + likelihood);
+                sb.AppendLine(contactInfo.ToString());
+                sb.AppendLine("Social Profiles: --------------------------------------");
                 foreach (SocialProfile p in socialProfiles)
                 {
-                    p.printProfile();
+                sb.AppendLine(p.ToString());
                 }
-            }
+            return sb.ToString();
+             }
         }
     }
 

@@ -38,21 +38,24 @@ namespace FullContactClientCore.model
         public string familyName { get; set; }
         public string fullName { get; set; }
 
-        public void print()
+
+        public override string ToString()
         {
-            Console.WriteLine("Given name: " + givenName);
-            Console.WriteLine("Family name: " + familyName);
-            Console.WriteLine("Full name: " + fullName);
-            Console.WriteLine("Chats: -----------------------------------------------------");
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Given name: " + givenName);
+            sb.AppendLine("Family name: " + familyName);
+            sb.AppendLine("Full name: " + fullName);
+            sb.AppendLine("Chats: ----------------------------------------------------------");
             foreach (Chat c in chats)
             {
-                Console.WriteLine(c.ToString());
+                sb.AppendLine(c.ToString());
             }
-            Console.WriteLine("Websites: ---------------------------------------------------");
+            sb.AppendLine("Websites: ---------------------------------------------------");
             foreach (Website s in websites)
             {
-                Console.WriteLine(s.ToString());
+                sb.AppendLine(s.ToString());
             }
+            return sb.ToString();
         }
     }
 }
