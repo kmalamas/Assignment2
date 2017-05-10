@@ -19,7 +19,7 @@ namespace FullContactClient
             _client.DefaultRequestHeaders.Add("X-FullContact-APIKey", "6e05e594b715e44b");
         }
         /// <summary>
-        /// Implementation of LookupPersonByEmailAsync method required by IFullContactApi interface.
+        /// Implementation of LookupPersonByEmailAsync method declared in IFullContactApi interface.
         /// Gets an email as input to be used as a filter in the request to the API. 
         /// Returns a async task which will return a FullContactPerson object.
         /// </summary>
@@ -40,7 +40,7 @@ namespace FullContactClient
         }
 
         /// <summary>
-        /// parses JSON response using Newtonsoft package. 
+        /// parses JSON response using Newtonsoft.JSON package. 
         /// It maps the attributes defined for FullContactPerson in the model
         /// defined in FullContactClientCore class library and returns an FullContactPerson object
         /// </summary>

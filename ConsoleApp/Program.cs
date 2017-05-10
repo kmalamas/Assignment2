@@ -43,6 +43,12 @@ namespace ConsoleApp
            
         }
 
+        /// <summary>
+        /// uses a regex pattern to check the format of the input string against email format. Does not check if email 
+        /// is real. Returns a bool value.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
        static  bool IsValidEmail(string email)
         {
             string pattern = null;
