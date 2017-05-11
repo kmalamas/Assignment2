@@ -16,8 +16,5 @@ Although this is a working solution there are still a few things to be done.
 
 1)Remove hardcoded api key and move it to config file.
 
-2)Provide sufficient input validation for email address on input.
+2)Check for error handling.
 
-3)Check for error handling.
-
-4)Provide proper documentation in code. 
