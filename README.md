@@ -18,3 +18,4 @@ Although this is a working solution there are still a few things to be done.
 
 2)Check for error handling.
 
+3)create tests. Although Newtonsoft handles JSON parsing the mapping to objects can be tested. Also input validation can be tested.
