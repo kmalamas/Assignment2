@@ -6,6 +6,8 @@ using FullContactClient;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Reflection;
+using ImageMagick;
 
 namespace ConsoleApp
 {
@@ -19,28 +21,38 @@ namespace ConsoleApp
 
         static async Task AsyncMain()
         {
-            bool validInput = true;
-            string email = string.Empty;
-            Console.WriteLine("Please enter an email address");
-            while (validInput)
-            {
+            ////bool validInput = true;
+            ////string email = string.Empty;
+            ////Console.WriteLine("Please enter an email address");
+            ////while (validInput)
+            ////{
                
-                email = Console.ReadLine();
-                if (!string.IsNullOrEmpty(email) && IsValidEmail(email)) 
-                    validInput = false;
-                else Console.WriteLine("Please enter a valid email address.");
+            ////    email = Console.ReadLine();
+            ////    if (!string.IsNullOrEmpty(email) && IsValidEmail(email)) 
+            ////        validInput = false;
+            ////    else Console.WriteLine("Please enter a valid email address.");
+            ////}
+
+            ////IFullContactApi fullContactApi = new FullContactAPI();
+            ////var person = await fullContactApi.LookupPersonByEmailAsync(email);
+            ////    if (person != null)  //if api returns no data for the email
+            ////    {
+            ////    Console.WriteLine(person.ToString());
+            ////    }
+            ////    else Console.WriteLine("No data returned for this email address. Press Any key to exit.");
+
+
+            var label = "Resources/label_g.png";
+            //var assembly = typeof(FullContactClient.FullContactAPI).GetTypeInfo().Assembly;
+            //Stream resource = assembly.GetManifestResourceStream($"FullContactClient.Resources.{label}");
+            using (var image = new MagickImage(label))
+            {
+                image.Write("arrow.png");
             }
 
-            IFullContactApi fullContactApi = new FullContactAPI();
-            var person = await fullContactApi.LookupPersonByEmailAsync(email);
-                if (person != null)  //if api returns no data for the email
-                {
-                Console.WriteLine(person.ToString());
-                }
-                else Console.WriteLine("No data returned for this email address. Press Any key to exit.");
-            Console.ReadLine();
 
-           
+
+                Console.ReadLine();
         }
 
         /// <summary>
