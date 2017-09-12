@@ -19,3 +19,21 @@ Although this is a working solution there are still a few things to be done.
 2)Check for error handling.
 
 3)create tests. Although Newtonsoft handles JSON parsing the mapping to objects can be tested. Also input validation can be tested.
+
+
+
+
+
+  <ItemGroup>
+    <EmbeddedResource Include="Recources\*.png" />
+  </ItemGroup>
+  
+  
+  
+            var label = "label_a.png";
+            var assembly = typeof(FullContactClient.FullContactAPI).GetTypeInfo().Assembly;
+            Stream resource = assembly.GetManifestResourceStream($"FullContactClient.Resources.{label}");
+            using (var image = new MagickImage(resource))
+            {
+                image.Write("arrow.png");
+            }
